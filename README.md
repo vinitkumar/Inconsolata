@@ -22,6 +22,30 @@ They are available in two families.
 
 Note: the Ligconsolata variant has not yet been upgraded to version 3.000, as we're prioritizing the non-ligature variants.
 
+This fork also adds discretionary coding ligatures for `!=`, `==`, `--`, `++`, `::`, `&&`, `||`, `//`, `/*`, `*/`, `<>`, `<<`, `>>`, `|>`, and `<|`.
+
+To re-apply those source edits, run:
+
+```
+python3 tools/add_coding_ligatures.py
+```
+
+### Pragmatic Narrow
+
+The `fonts/pragmatic-narrow` directory contains a slightly narrow, PragmataPro-inspired variant named **Inconsolata Pragmatic Narrow**. It pins the existing variable font to `wdth=85` and keeps the `wght` axis variable.
+
+To rebuild the TTF and WOFF2 artifacts, run:
+
+```
+python3 tools/build_pragmatic_narrow.py
+```
+
+### Rebuild notes
+
+This source currently contains upright masters only. The generated family includes regular, bold, and the other upright weight/width combinations, but it does not include italic or bold italic fonts.
+
+The 100-weight Thin instances require the legacy pinned build stack from `requirements.txt`; current `fontmake` builds the variable font and the 200-900 static instances, but skips the extrapolated Thin instances.
+
 ## Building the family
 
 Family is built using Glyphs, fontmake and gftools post processing script. Tools are all python based.
