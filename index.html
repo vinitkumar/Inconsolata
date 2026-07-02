@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Inconsolata Coding Ligatures</title>
+    <meta
+      name="description"
+      content="A live specimen for Inconsolata with coding ligatures and a Pragmatic Narrow variant."
+    />
+    <meta name="color-scheme" content="light" />
+    <link rel="preload" href="fonts/Inconsolata-Regular.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="fonts/Inconsolata-Bold.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="nav" aria-label="Primary">
+        <a class="wordmark" href="#top" aria-label="Inconsolata demo home">Inconsolata</a>
+        <div class="nav-links">
+          <a href="#ligatures">Ligatures</a>
+          <a href="#narrow">Narrow</a>
+          <a href="#try">Try it</a>
+          <a href="https://github.com/vinitkumar/Inconsolata">GitHub</a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow">A coding-focused fork</p>
+          <h1 id="hero-title">Inconsolata with sharper operators and a narrower voice.</h1>
+          <p class="lede">
+            This build adds everyday programming ligatures, exposes them through normal
+            OpenType <code>liga</code>, and includes a PragmataPro-inspired narrow variable face.
+          </p>
+          <div class="actions">
+            <a class="button primary" href="#try">Try the specimen</a>
+            <a class="button" href="fonts/InconsolataPragmaticNarrow[wght].woff2">Download narrow WOFF2</a>
+          </div>
+        </div>
+        <div class="hero-sample" aria-label="Font sample">
+          <pre><code>if (state !== "ready" && width &lt;= 85) {
+  render(font =&gt; font.name === "Inconsolata");
+}
+
+pipeline
+  |&gt; shape("liga")
+  |&gt; export("woff2");</code></pre>
+        </div>
+      </section>
+
+      <section class="metrics" aria-label="Build summary">
+        <div>
+          <strong>22</strong>
+          <span>coding ligature rules</span>
+        </div>
+        <div>
+          <strong>liga + dlig</strong>
+          <span>works in common editors</span>
+        </div>
+        <div>
+          <strong>85%</strong>
+          <span>Pragmatic Narrow width</span>
+        </div>
+      </section>
+
+      <section id="ligatures" class="section two-column" aria-labelledby="ligatures-title">
+        <div>
+          <p class="eyebrow">Operators</p>
+          <h2 id="ligatures-title">Ligatures that stay close to code.</h2>
+          <p>
+            The additions cover equality, arrows, comments, pipes, shifts, and composition
+            operators. They are intentionally restrained: the glyphs clarify operator groups
+            without turning source text into decoration.
+          </p>
+        </div>
+        <div class="operator-grid" aria-label="Ligature samples">
+          <span>!=</span><span>==</span><span>===</span><span>!==</span>
+          <span>-&gt;</span><span>&lt;-</span><span>=&gt;</span><span>&lt;=</span>
+          <span>&gt;=</span><span>::</span><span>++</span><span>--</span>
+          <span>&amp;&amp;</span><span>||</span><span>//</span><span>/*</span>
+          <span>*/</span><span>&lt;&gt;</span><span>&lt;&lt;</span><span>&gt;&gt;</span>
+          <span>|&gt;</span><span>&lt;|</span>
+        </div>
+      </section>
+
+      <section id="narrow" class="section split-band" aria-labelledby="narrow-title">
+        <div>
+          <p class="eyebrow">Pragmatic Narrow</p>
+          <h2 id="narrow-title">A denser cut for busy terminals.</h2>
+          <p>
+            The narrow face pins the existing width axis to <code>wdth=85</code> and keeps
+            the weight axis variable. It gives code a little more horizontal breathing room
+            without changing Inconsolata's plainspoken texture.
+          </p>
+        </div>
+        <div class="comparison" aria-label="Regular and narrow comparison">
+          <div>
+            <span>Regular</span>
+            <p class="regular">const columns = ["name", "weight", "ligatures"];</p>
+          </div>
+          <div>
+            <span>Pragmatic Narrow</span>
+            <p class="narrow">const columns = ["name", "weight", "ligatures"];</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="try" class="section specimen" aria-labelledby="try-title">
+        <div class="specimen-heading">
+          <div>
+            <p class="eyebrow">Live type tester</p>
+            <h2 id="try-title">Write code in the rebuilt font.</h2>
+          </div>
+          <div class="controls" aria-label="Specimen controls">
+            <label>
+              Face
+              <select id="face-select">
+                <option value="regular">Inconsolata</option>
+                <option value="narrow">Inconsolata Pragmatic Narrow</option>
+              </select>
+            </label>
+            <label>
+              Size
+              <input id="size-range" type="range" min="18" max="42" value="26" />
+            </label>
+            <label class="toggle">
+              <input id="ligature-toggle" type="checkbox" checked />
+              Ligatures
+            </label>
+          </div>
+        </div>
+        <textarea id="tester" spellcheck="false">type Result = Ok&lt;User&gt; | Err&lt;Failure&gt;;
+
+const ready = user !== null &amp;&amp; cache.size &gt;= 2;
+const view = ready =&gt; render(user.profile);
+
+source
+  |&gt; parse()
+  |&gt; normalize()
+  |&gt; publish();</textarea>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>
+        Built from the local Inconsolata fork with WOFF2 webfonts, coding ligatures,
+        and the new Pragmatic Narrow variant.
+      </p>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
