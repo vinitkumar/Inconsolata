@@ -42,7 +42,13 @@ python3 tools/build_pragmatic_narrow.py
 
 ### Rebuild notes
 
-This source currently contains upright masters only. The generated family includes regular, bold, and the other upright weight/width combinations, but it does not include italic or bold italic fonts.
+This source currently contains upright masters only. The fork includes synthetic slanted **Italic** and **Bold Italic** TTF/WOFF2 artifacts generated from the rebuilt Regular and Bold TTFs:
+
+```
+python3 tools/build_synthetic_italics.py
+```
+
+These faces are marked as Italic and Bold Italic for app font selection, but they are oblique builds rather than separately drawn italic masters.
 
 The 100-weight Thin instances require the legacy pinned build stack from `requirements.txt`; current `fontmake` builds the variable font and the 200-900 static instances, but skips the extrapolated Thin instances.
 
