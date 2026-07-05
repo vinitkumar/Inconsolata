@@ -40,15 +40,19 @@ To rebuild the TTF and WOFF2 artifacts, run:
 python3 tools/build_pragmatic_narrow.py
 ```
 
-### Rebuild notes
+### Italic and Bold Italic
 
-This source currently contains upright masters only. The fork includes synthetic slanted **Italic** and **Bold Italic** TTF/WOFF2 artifacts generated from the rebuilt Regular and Bold TTFs:
+The fork includes **Inconsolata Italic** and **Inconsolata Bold Italic** TTF/WOFF2 artifacts for editor and terminal fallback support. They are generated from the rebuilt upright Regular and Bold TTFs and keep the same coding ligature support.
+
+To rebuild those artifacts, run:
 
 ```
 python3 tools/build_synthetic_italics.py
 ```
 
-These faces are marked as Italic and Bold Italic for app font selection, but they are oblique builds rather than separately drawn italic masters.
+### Rebuild notes
+
+This source currently contains upright masters only. The generated Italic and Bold Italic faces are marked as Italic and Bold Italic for app font selection, but they are oblique builds rather than separately drawn italic masters.
 
 The 100-weight Thin instances require the legacy pinned build stack from `requirements.txt`; current `fontmake` builds the variable font and the 200-900 static instances, but skips the extrapolated Thin instances.
 
