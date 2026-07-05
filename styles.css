@@ -16,6 +16,22 @@
 
 @font-face {
   font-family: "Demo Inconsolata";
+  src: url("fonts/Inconsolata-Italic.woff2") format("woff2");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Demo Inconsolata";
+  src: url("fonts/Inconsolata-BoldItalic.woff2") format("woff2");
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Demo Inconsolata";
   src: url("fonts/Inconsolata-ExtraLight.woff2") format("woff2");
   font-weight: 200;
   font-style: normal;
@@ -320,6 +336,29 @@ h2 {
 
 .narrow {
   font-family: "Demo Inconsolata Narrow", "Demo Inconsolata", ui-monospace, monospace;
+}
+
+.style-samples {
+  display: grid;
+  gap: 12px;
+}
+
+.style-samples p {
+  margin: 0;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  color: var(--ink);
+  padding: 18px;
+  font-size: clamp(1.5rem, 3vw, 2.6rem);
+}
+
+.style-samples .italic {
+  font-style: italic;
+}
+
+.style-samples .bold-italic {
+  font-weight: 700;
+  font-style: italic;
 }
 
 .specimen {
